@@ -10,9 +10,9 @@ import java.util.Map;
 /**
  * Lambda handler of AlphaHealth DP Service.
  */
-public class AlphaHealthDPServiceLambda implements RequestHandler<Map<String, String>, String> {
+public class AlphaHealthDPServiceLambda implements RequestHandler<Map<String, Object>, String> {
     @Override
-    public String handleRequest(Map<String, String> input, Context context) {
+    public String handleRequest(Map<String, Object> input, Context context) {
         LambdaLogger logger = context.getLogger();
 
         input.forEach((k, v) -> logger.log(k + ":" + v));

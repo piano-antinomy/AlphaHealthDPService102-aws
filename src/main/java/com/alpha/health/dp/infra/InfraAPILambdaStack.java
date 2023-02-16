@@ -1,9 +1,12 @@
 package com.alpha.health.dp.infra;
 
 import software.amazon.awscdk.Duration;
+import software.amazon.awscdk.services.apigateway.Deployment;
 import software.amazon.awscdk.services.apigateway.LambdaIntegration;
-import software.amazon.awscdk.services.apigateway.ProxyResourceOptions;
+import software.amazon.awscdk.services.apigateway.MethodLoggingLevel;
+import software.amazon.awscdk.services.apigateway.Resource;
 import software.amazon.awscdk.services.apigateway.RestApi;
+import software.amazon.awscdk.services.apigateway.Stage;
 import software.amazon.awscdk.services.lambda.Code;
 import software.amazon.awscdk.services.lambda.Function;
 import software.amazon.awscdk.services.lambda.Runtime;
@@ -17,6 +20,7 @@ import software.constructs.Construct;
  */
 public class InfraAPILambdaStack extends Construct {
     public static final String SERVICE_NAME = "AlphaHealthDpService";
+
     @SuppressWarnings("serial")
     public InfraAPILambdaStack(Construct scope, String id) {
         super(scope, id);
@@ -37,23 +41,34 @@ public class InfraAPILambdaStack extends Construct {
 
         bucket.grantReadWrite(handler);
 
-        RestApi api = RestApi.Builder.create(this, "alpha-health-dp-service-beta-pdx")
-            .restApiName(SERVICE_NAME).description("This service services as data providers for web app.")
-            .build();
-
         LambdaIntegration lambdaIntegration = LambdaIntegration.Builder.create(handler)
             .requestTemplates(java.util.Map.of(
                 "application/json", "{ \"statusCode\": \"200\" }"))
             .build();
 
+        RestApi api = RestApi.Builder.create(this, SERVICE_NAME + "APIG")
+            .restApiName(SERVICE_NAME)
+            .description("This service services as data providers for web app.")
+            .defaultIntegration(lambdaIntegration)
+            .cloudWatchRole(true)
+            .build();
+
         /**
-         * add lambda as proxy such that requests into Api-g will forward to lambda.
+         * configure only beta stage for now.
          */
-        api.getRoot().addProxy(
-            ProxyResourceOptions
-                .builder()
-                .defaultIntegration(lambdaIntegration)
-                .anyMethod(true)
-                .build());
+        Stage betaStage = Stage.Builder.create(this, SERVICE_NAME + "beta-stage")
+            .stageName("beta")
+            .loggingLevel(MethodLoggingLevel.INFO)
+            .deployment(Deployment.Builder.create(this, SERVICE_NAME + "beta-stage-deploy")
+                .description("beta deployment configure")
+                .retainDeployments(true)
+                .api(api)
+                .build())
+            .build();
+
+        Resource queryAPI = api.getRoot().addResource("query");
+        Resource queryClinicalTrialAPI = queryAPI.addResource("clinicalTrials");
+        queryClinicalTrialAPI.addMethod("GET", lambdaIntegration);
+
     }
 }
