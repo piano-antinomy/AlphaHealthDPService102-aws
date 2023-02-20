@@ -18,11 +18,15 @@ import java.util.Map;
 @AllArgsConstructor
 @Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class QueryClinicalTrialsResponse {
+public class DPServiceResponse {
 
+    @Builder.Default
     boolean isBase64Encoded = false;
 
+    @Builder.Default
     Map<String, String> headers = Collections.emptyMap();
+
+    @Builder.Default
     Map<String, String> multiValueHeaders = Collections.emptyMap();
 
     public int statusCode;

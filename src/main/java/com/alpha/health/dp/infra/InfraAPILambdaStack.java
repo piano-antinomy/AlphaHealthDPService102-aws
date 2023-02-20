@@ -80,12 +80,12 @@ public class InfraAPILambdaStack extends Construct {
             Resource queryAPI = api.getRoot().addResource("query");
 
             Resource queryClinicalTrialAPI = queryAPI.addResource("clinicalTrials");
-            Resource queryUserPredictionAPI = queryAPI.addResource("userPrediction");
-            Resource queryUserTreatmentAPI = queryAPI.addResource("userTreatment");
+            Resource queryPersonalPredictionAPI = queryAPI.addResource("personalPrediction");
+            Resource queryPersonalTreatmentAPI = queryAPI.addResource("personalTreatment");
 
             queryClinicalTrialAPI.addMethod("GET", lambdaIntegration);
-            queryUserPredictionAPI.addMethod("GET", lambdaIntegration);
-            queryUserTreatmentAPI.addMethod("GET", lambdaIntegration);
+            queryPersonalPredictionAPI.addMethod("GET", lambdaIntegration);
+            queryPersonalTreatmentAPI.addMethod("GET", lambdaIntegration);
 
             api.setDeploymentStage(betaStage);
         } catch (IOException e) {
