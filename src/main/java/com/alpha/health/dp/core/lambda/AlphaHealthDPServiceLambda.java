@@ -1,22 +1,29 @@
 package com.alpha.health.dp.core.lambda;
 
 
+import com.alpha.health.dp.core.lambda.model.QueryClinicalTrialsResponse;
 import com.amazonaws.services.lambda.runtime.Context;
-import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Map;
 
 /**
  * Lambda handler of AlphaHealth DP Service.
  */
-public class AlphaHealthDPServiceLambda implements RequestHandler<Map<String, Object>, String> {
+public class AlphaHealthDPServiceLambda implements RequestHandler<Map<String, Object>, QueryClinicalTrialsResponse> {
+
+    private static final Logger LOGGER = LogManager.getLogger(AlphaHealthDPServiceLambda.class);
+
     @Override
-    public String handleRequest(Map<String, Object> input, Context context) {
-        LambdaLogger logger = context.getLogger();
+    public QueryClinicalTrialsResponse handleRequest(Map<String, Object> input, Context context) {
 
-        input.forEach((k, v) -> logger.log(k + ":" + v));
+        LOGGER.info(input);
 
-        return new String("hello world! 200");
+        return QueryClinicalTrialsResponse
+            .builder()
+            .body("Successful")
+            .statusCode(200).build();
     }
 }
