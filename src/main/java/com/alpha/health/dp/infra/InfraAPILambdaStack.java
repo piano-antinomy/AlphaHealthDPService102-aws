@@ -45,6 +45,7 @@ public class InfraAPILambdaStack extends Construct {
                 "BUCKET", bucket.getBucketName()))
             .logRetention(RetentionDays.ONE_WEEK)
             .timeout(Duration.minutes(1))
+            .memorySize(512)
             .build();
 
         bucket.grantReadWrite(handler);

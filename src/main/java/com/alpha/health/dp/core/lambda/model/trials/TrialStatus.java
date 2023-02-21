@@ -5,8 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import java.util.Date;
+import org.joda.time.DateTime;
 
 @Getter
 @Builder
@@ -14,10 +13,10 @@ import java.util.Date;
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TrialStatus {
-    public String overallStatus;
+    private String overallStatus;
 
-    public Date statusVerifiedDate;
+    private DateTime statusVerifiedDate;
 
-    public Date startDate;
+    private DateTime startDate;
 
 }

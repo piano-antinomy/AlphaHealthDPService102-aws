@@ -21,15 +21,15 @@ import java.util.Map;
 public class DPServiceResponse {
 
     @Builder.Default
-    boolean isBase64Encoded = false;
+    private boolean isBase64Encoded = false;
 
     @Builder.Default
-    Map<String, String> headers = Collections.emptyMap();
+    private Map<String, String> headers = Collections.emptyMap();
 
     @Builder.Default
-    Map<String, String> multiValueHeaders = Collections.emptyMap();
+    private Map<String, String> multiValueHeaders = Collections.emptyMap();
 
-    public int statusCode;
+    private int statusCode;
 
-    public String body;
+    private String body;
 }

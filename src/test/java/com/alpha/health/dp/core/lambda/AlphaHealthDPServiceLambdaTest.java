@@ -15,7 +15,7 @@ public class AlphaHealthDPServiceLambdaTest {
         // Arrange
         Map<String, Object> request = new HashMap<String, Object>() {{
             put("resource", "/query/clinicalTrials ");
-            put("queryStringParameters", Map.of("location", "Seattle", "condition", "anything"));
+            put("queryStringParameters", Map.of("location", "Seattle", "condition", "migraine"));
         }};
 
         // Act
@@ -23,5 +23,36 @@ public class AlphaHealthDPServiceLambdaTest {
 
         // Assert
         Assertions.assertEquals(200, response.getStatusCode());
+    }
+
+    @Test
+    protected void test_lambdaHandlesNullQueries() {
+        // Arrange
+        Map<String, Object> request = new HashMap<String, Object>() {{
+            put("resource", "/query/clinicalTrials ");
+        }};
+
+        // Act
+        DPServiceResponse response = target.handleRequest(request, null);
+
+        // Assert
+        Assertions.assertEquals(200, response.getStatusCode());
+    }
+
+    @Test
+    protected void test_lambdaHandlesMultipleWordsInParams() {
+        // Arrange
+        final String trialId = "NCT05323253";
+        Map<String, Object> request = new HashMap<String, Object>() {{
+            put("resource", "/query/clinicalTrials ");
+            put("queryStringParameters", Map.of("location", "United States", "condition", trialId));
+        }};
+
+        // Act
+        DPServiceResponse response = target.handleRequest(request, null);
+
+        // Assert
+        Assertions.assertEquals(200, response.getStatusCode());
+        Assertions.assertTrue(response.getBody().contains(trialId));
     }
 }

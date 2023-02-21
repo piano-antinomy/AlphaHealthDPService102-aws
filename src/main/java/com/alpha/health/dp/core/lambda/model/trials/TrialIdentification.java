@@ -12,9 +12,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TrialIdentification {
-    public String nctId;
+    private String nctId;
 
-    public String briefTitle;
+    private String briefTitle;
 
-    public String OfficialTitle;
+    private String OfficialTitle;
 }

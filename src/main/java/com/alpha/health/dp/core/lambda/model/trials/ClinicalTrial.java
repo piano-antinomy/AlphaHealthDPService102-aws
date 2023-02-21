@@ -16,13 +16,11 @@ import java.util.List;
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ClinicalTrial {
-    public TrialIdentification trialIdentification;
+    private TrialIdentification trialIdentification;
 
-    public TrialStatus trialStatus;
+    private TrialStatus trialStatus;
 
-    public TrialLocation trialLocation;
+    private List<TrialLocation> trialLocations;
 
-    public List<TrialLocation> allTrialLocations;
-
-    public StudyCondition studyCondition;
+    private StudyCondition studyCondition;
 }
