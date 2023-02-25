@@ -3,13 +3,7 @@
   "Statement": [
     {
       "Effect": "Allow",
-      "Principal": {
-        "AWS": [
-          "arn:aws:iam::870719783089:user/super-admin",
-          "arn:aws:iam::870719783089:root",
-          "arn:aws:iam::870719783089:user/postman-user"
-        ]
-      },
+      "Principal": "*",
       "Action": "execute-api:Invoke",
       "Resource": "*"
     }

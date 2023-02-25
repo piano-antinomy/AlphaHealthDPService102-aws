@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 
 public class ClinicalTrialsGovClient {
     private static String FIELD_LIST = "fields=NCTId,Condition,BriefTitle,OfficialTitle," +
-        "LocationCity,LocationState,LocationZip,LocationCountry,LocationStatus," +
+        "LocationCity,LocationState,LocationZip,LocationCountry,LocationStatus,LocationFacility," +
         "OverallStatus,StatusVerifiedDate,StartDate";
     private static String CLINICAL_TRIALS_GOV_URL = "https://clinicaltrials.gov/api/query/study_fields?";
 

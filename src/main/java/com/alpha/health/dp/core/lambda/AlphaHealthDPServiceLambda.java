@@ -47,6 +47,10 @@ public class AlphaHealthDPServiceLambda implements RequestHandler<Map<String, Ob
             // routing to processors
             return DPServiceResponse
                 .builder()
+                .headers(Map.of(
+                    "Access-Control-Allow-Origin", "http://localhost:3000",
+                    "Access-Control-Allow-Methods", "GET",
+                    "Access-Control-Allow-Headers", "Content-Type, Authorization"))
                 .body(buildJsonString(processorMap.get(pathName).process(request)))
                 .statusCode(200)
                 .build();

@@ -2,11 +2,9 @@ package com.alpha.health.dp.infra;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import software.amazon.awscdk.Duration;
-import software.amazon.awscdk.services.apigateway.AuthorizationType;
 import software.amazon.awscdk.services.apigateway.Deployment;
 import software.amazon.awscdk.services.apigateway.LambdaIntegration;
 import software.amazon.awscdk.services.apigateway.MethodLoggingLevel;
-import software.amazon.awscdk.services.apigateway.MethodOptions;
 import software.amazon.awscdk.services.apigateway.Resource;
 import software.amazon.awscdk.services.apigateway.RestApi;
 import software.amazon.awscdk.services.apigateway.Stage;
@@ -59,7 +57,8 @@ public class InfraAPILambdaStack extends Construct {
                 .restApiName(SERVICE_NAME)
                 .description("This service services as data providers for web app.")
                 .defaultIntegration(lambdaIntegration)
-                .defaultMethodOptions(MethodOptions.builder().authorizationType(AuthorizationType.IAM).build())
+                // uncomment the following line to enable IAM auth
+                //.defaultMethodOptions(MethodOptions.builder().authorizationType(AuthorizationType.IAM).build())
                 .policy(PolicyDocument.fromJson(
                     objectMapper.readValue(
                         new File("target/classes/com/alpha/health/dp/infra/apig_resource_policy.json"), HashMap.class)))
