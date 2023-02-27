@@ -50,7 +50,7 @@ public class AlphaHealthDPServiceLambda implements RequestHandler<Map<String, Ob
                 .headers(Map.of(
                     "Access-Control-Allow-Origin", "http://localhost:3000",
                     "Access-Control-Allow-Methods", "GET",
-                    "Access-Control-Allow-Headers", "Content-Type, Authorization"))
+                    "Access-Control-Allow-Headers", "Content-Type, Authorization, User-Agent"))
                 .body(buildJsonString(processorMap.get(pathName).process(request)))
                 .statusCode(200)
                 .build();

@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TrialLocation {
     private String locationStatus;
+    private String instituteName;
     private String locationCity;
     private String locationState;
     private String locationZip;

@@ -3,7 +3,11 @@
   "Statement": [
     {
       "Effect": "Allow",
-      "Principal": "*",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::870719783089:user/postman-user"
+        ]
+      },
       "Action": "execute-api:Invoke",
       "Resource": "*"
     }

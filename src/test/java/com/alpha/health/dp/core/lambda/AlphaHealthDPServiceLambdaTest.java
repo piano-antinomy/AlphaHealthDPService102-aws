@@ -42,7 +42,7 @@ public class AlphaHealthDPServiceLambdaTest {
     @Test
     protected void test_lambdaHandlesMultipleWordsInParams() {
         // Arrange
-        final String trialId = "NCT05323253";
+        final String trialId = "NCT04472338";
         Map<String, Object> request = new HashMap<String, Object>() {{
             put("resource", "/query/clinicalTrials ");
             put("queryStringParameters", Map.of("location", "United States", "condition", trialId));
@@ -51,8 +51,11 @@ public class AlphaHealthDPServiceLambdaTest {
         // Act
         DPServiceResponse response = target.handleRequest(request, null);
 
+        System.out.println(response.getBody());
         // Assert
         Assertions.assertEquals(200, response.getStatusCode());
         Assertions.assertTrue(response.getBody().contains(trialId));
+
+
     }
 }

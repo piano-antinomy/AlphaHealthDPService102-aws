@@ -7,26 +7,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import java.util.List;
-
 @Getter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ClinicalTrial {
-    private TrialIdentification trialIdentification;
-
-    private TrialStatus trialStatus;
-
-    private List<TrialLocation> trialLocations;
-
-    private StudyCondition studyCondition;
-
-    private String studyPhase;
-
-    private String studyType;
-
-    private List<StudyGroup> studyGroups;
+public class StudyGroup {
+    private String groupId;
+    private String groupDescription;
+    private String groupIntervention;
 }
