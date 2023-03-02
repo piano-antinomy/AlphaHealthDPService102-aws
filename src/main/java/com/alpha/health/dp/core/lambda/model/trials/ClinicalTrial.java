@@ -29,4 +29,6 @@ public class ClinicalTrial {
     private String studyType;
 
     private List<StudyGroup> studyGroups;
+
+    private EligibilityCriteria eligibilityCriteria;
 }
