@@ -15,15 +15,12 @@ import org.joda.time.DateTime;
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserTNM {
-    private String primaryCancer;
-    private DateTime dateOfStaging;
-    /**
-     * change to enum later for all TNM stage data
-     */
-    private String tStagePrimary;
-    private String tStageSecondary;
-    private String nStagePrimary;
-    private String nStageSecondary;
-    private String mStagePrimary;
-    private String mStageSecondary;
+    public String primaryCancer;
+    public DateTime dateOfStaging;
+    public String t_StagePrimary;
+    public String t_StageSecondary;
+    public String n_StagePrimary;
+    public String n_StageSecondary;
+    public String m_StagePrimary;
+    public String m_StageSecondary;
 }

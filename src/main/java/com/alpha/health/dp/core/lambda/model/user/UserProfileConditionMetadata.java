@@ -24,6 +24,6 @@ public class UserProfileConditionMetadata {
     private UserEBRT userEBRT;
     private UserDrugs userDrugs;
     private UserLabs userLabs;
-    private UserBiopsies userBiopsies;
-    private UserTNM userTNM;
+    public UserBiopsies userBiopsies;
+    public UserTNM userTNM;
 }
