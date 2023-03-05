@@ -7,6 +7,7 @@ import com.alpha.health.dp.core.lambda.model.processor.QueryClinicalTrialsProces
 import com.alpha.health.dp.core.lambda.model.trials.ClinicalTrial;
 import com.alpha.health.dp.core.lambda.model.trials.StudyCondition;
 import com.alpha.health.dp.core.lambda.model.trials.StudyGroup;
+import com.alpha.health.dp.core.lambda.model.trials.TreatmentDetails;
 import com.alpha.health.dp.core.lambda.model.trials.TrialIdentification;
 import com.alpha.health.dp.core.lambda.model.trials.TrialLocation;
 import com.alpha.health.dp.core.lambda.model.trials.TrialStatus;
@@ -17,6 +18,8 @@ import org.joda.time.DateTime;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class QueryClinicalTrialsProcessorImpls implements ServiceRequestProcessor {
     private static final Logger LOGGER = LogManager.getLogger(QueryClinicalTrialsProcessorImpls.class);
@@ -40,7 +43,10 @@ public class QueryClinicalTrialsProcessorImpls implements ServiceRequestProcesso
         QueryClinicalTrialsProcessorRequest queryClinicalTrialsProcessorRequest) {
         // Merge all location fields
 
-        List<ClinicalTrial> list = Collections.singletonList(buildClinicalTrial(queryClinicalTrialsProcessorRequest));
+        List<ClinicalTrial> list = IntStream.range(1, 30)
+            .boxed()
+            .map(i -> buildClinicalTrial(queryClinicalTrialsProcessorRequest, i))
+            .collect(Collectors.toList());
 
         return QueryClinicalTrialsProcessorResponse.builder()
             .clinicalTrialList(list)
@@ -52,16 +58,27 @@ public class QueryClinicalTrialsProcessorImpls implements ServiceRequestProcesso
      * @param queryClinicalTrialsProcessorRequest
      * @return
      */
-    private ClinicalTrial buildClinicalTrial(QueryClinicalTrialsProcessorRequest queryClinicalTrialsProcessorRequest) {
+    private ClinicalTrial buildClinicalTrial(
+        QueryClinicalTrialsProcessorRequest queryClinicalTrialsProcessorRequest,
+        int id) {
 
-        List<TrialLocation> locationList = Collections.singletonList(TrialLocation.builder()
-            .locationCity(queryClinicalTrialsProcessorRequest.getLocation())
-            .locationState("WA")
-            .instituteName("Beijie Seattle Care Center (BSCC)")
-            .locationCountry("United States")
-            .locationZip("98109")
-            .locationStatus("Recruiting")
-            .build());
+        List<TrialLocation> locationList = Arrays.asList(
+            TrialLocation.builder()
+                .locationCity(queryClinicalTrialsProcessorRequest.getLocation())
+                .locationState("WA")
+                .instituteName("Beijie Seattle Care Center (BSCC)")
+                .locationCountry("United States")
+                .locationZip("98109")
+                .locationStatus("Recruiting")
+                .build(),
+            TrialLocation.builder()
+                .locationCity("Portland")
+                .locationState("OR")
+                .instituteName("Beijie Xu Portland Care Center (BSCC)")
+                .locationCountry("United States")
+                .locationZip("09503")
+                .locationStatus("Recruiting")
+                .build());
 
         StudyGroup group_0 = StudyGroup.builder()
             .groupDescription("Civasheet 7")
@@ -78,13 +95,17 @@ public class QueryClinicalTrialsProcessorImpls implements ServiceRequestProcesso
         return ClinicalTrial.builder()
             .trialIdentification(TrialIdentification.builder()
                 .nctId("NCT04472338")
-                .briefTitle("Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study")
+                .briefTitle("Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - " + id)
                 .OfficialTitle("Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study")
                 .build())
             .trialStatus(TrialStatus.builder()
                 .overallStatus("Recruiting")
                 .startDate(DateTime.now().minusMonths(1))
                 .statusVerifiedDate(DateTime.now().minusDays(1))
+                .build())
+            .treatmentDetails(TreatmentDetails.builder()
+                .treatmentType("Radiotherapy")
+                .treatmentStudied("Radiotherapy: low dose rate brachytherapy + external-beam radiation")
                 .build())
             .trialLocations(locationList)
             .studyCondition(StudyCondition.builder().conditions(Collections.singletonList("Prostate Carcinoma")).build())

@@ -30,5 +30,7 @@ public class ClinicalTrial {
 
     private List<StudyGroup> studyGroups;
 
+    private TreatmentDetails treatmentDetails;
+
     private EligibilityCriteria eligibilityCriteria;
 }
