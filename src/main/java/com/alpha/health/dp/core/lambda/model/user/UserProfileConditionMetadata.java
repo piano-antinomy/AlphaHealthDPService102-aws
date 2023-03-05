@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.List;
+
 /**
  * should be part of user metadata. This should only contain condition related metadata.
  *
@@ -22,7 +24,7 @@ public class UserProfileConditionMetadata {
     private UserConditions userConditions;
     private UserSurgeries userSurgeries;
     private UserEBRT userEBRT;
-    private UserDrugs userDrugs;
+    public List<UserDrug> userDrugs;
     private UserLabs userLabs;
     public UserBiopsies userBiopsies;
     public UserTNM userTNM;

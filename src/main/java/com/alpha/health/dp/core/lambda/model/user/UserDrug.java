@@ -5,14 +5,23 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
+import org.joda.time.DateTime;
 
 @Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserConditions {
-    public String conditionName = "Shen Jing Bing";
+public class UserDrug {
+    public int cycles;
+    public String type;
+    public String purpose;
+    public String name;
+    public DateTime startDate;
+    public DateTime endDate;
+    public Number durationDays;
 }

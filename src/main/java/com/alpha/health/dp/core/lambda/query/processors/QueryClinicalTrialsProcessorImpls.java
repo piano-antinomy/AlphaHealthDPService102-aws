@@ -45,7 +45,7 @@ public class QueryClinicalTrialsProcessorImpls implements ServiceRequestProcesso
 
         List<ClinicalTrial> list = IntStream.range(1, 30)
             .boxed()
-            .map(i -> buildClinicalTrial(queryClinicalTrialsProcessorRequest, i))
+            .map(this::buildClinicalTrial)
             .collect(Collectors.toList());
 
         return QueryClinicalTrialsProcessorResponse.builder()
@@ -55,16 +55,13 @@ public class QueryClinicalTrialsProcessorImpls implements ServiceRequestProcesso
 
     /**
      * TODO, change to real DAO model.
-     * @param queryClinicalTrialsProcessorRequest
      * @return
      */
-    private ClinicalTrial buildClinicalTrial(
-        QueryClinicalTrialsProcessorRequest queryClinicalTrialsProcessorRequest,
-        int id) {
+    private ClinicalTrial buildClinicalTrial(int id) {
 
         List<TrialLocation> locationList = Arrays.asList(
             TrialLocation.builder()
-                .locationCity(queryClinicalTrialsProcessorRequest.getLocation())
+                .locationCity("Seattle")
                 .locationState("WA")
                 .instituteName("Beijie Seattle Care Center (BSCC)")
                 .locationCountry("United States")
