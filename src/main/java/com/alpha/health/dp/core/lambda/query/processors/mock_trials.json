@@ -1,0 +1,1570 @@
+{
+  "clinicalTrialList": [
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 1",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "Seattle",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 1",
+      "studyType": "Observational",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Behaviorial",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 2",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Waitlist",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 1",
+      "studyType": "Interventional",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Behavioral",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 3",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "On hold",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 1",
+      "studyType": "Interventional",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Behavioral",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 4",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "On hold",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 1",
+      "studyType": "Observational",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Behavioral",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 5",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Waitlist",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 1",
+      "studyType": "Observational",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Dietary supplement",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 6",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 1",
+      "studyType": "Observational",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Dietary supplement",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 7",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 1",
+      "studyType": "Observational",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Dietary supplement",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 8",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "On hold",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 4",
+      "studyType": "Observational",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Drug",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 9",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Waitlist",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Waitlist",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "Seattle",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Waitlist",
+          "instituteName": "Beijie Xu Portland Care Center (BXPCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 1",
+      "studyType": "Observational",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Drug",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 10",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "Seattle",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 3",
+      "studyType": "Observational",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Surgery",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 11",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 1",
+      "studyType": "Interventional",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Surgery",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 12",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 1",
+      "studyType": "Observational",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Surgery",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 13",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 3",
+      "studyType": "Observational",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Surgery",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 14",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 1",
+      "studyType": "Observational",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Radiotherapy",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 15",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 3",
+      "studyType": "Interventional",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Radiotherapy",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 16",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 1",
+      "studyType": "Observational",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Radiotherapy",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 17",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 1",
+      "studyType": "Observational",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Radiotherapy",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 18",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 1",
+      "studyType": "Observational",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Radiotherapy",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 19",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 1",
+      "studyType": "Observational",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Radiotherapy",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 20",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 1",
+      "studyType": "Observational",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Radiotherapy",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 21",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 1",
+      "studyType": "Interventional",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Radiotherapy",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 22",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 1",
+      "studyType": "Observational",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Radiotherapy",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 23",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 1",
+      "studyType": "Expanded access",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Radiotherapy",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 24",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 1",
+      "studyType": "Expanded access",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Radiotherapy",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 25",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 1",
+      "studyType": "Expanded access",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Radiotherapy",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 26",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.866Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 1",
+      "studyType": "Observational",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Radiotherapy",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 27",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.867Z",
+        "startDate": "2023-02-05T06:11:04.866Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 2",
+      "studyType": "Expanded access",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Radiotherapy",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 28",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.867Z",
+        "startDate": "2023-02-05T06:11:04.867Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 2",
+      "studyType": "Observational",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Radiotherapy",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    },
+    {
+      "trialIdentification": {
+        "nctId": "NCT04472338",
+        "briefTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer - 29",
+        "officialTitle": "Prostate Screening for Men With Inherited Risk of Developing Aggressive Prostate Cancer, PATROL Study"
+      },
+      "trialStatus": {
+        "overallStatus": "Recruiting",
+        "statusVerifiedDate": "2023-03-04T06:11:04.867Z",
+        "startDate": "2023-02-05T06:11:04.867Z"
+      },
+      "trialLocations": [
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Seattle Care Center (BSCC)",
+          "locationCity": "",
+          "locationState": "WA",
+          "locationZip": "98109",
+          "locationCountry": "United States"
+        },
+        {
+          "locationStatus": "Recruiting",
+          "instituteName": "Beijie Xu Portland Care Center (BSCC)",
+          "locationCity": "Portland",
+          "locationState": "OR",
+          "locationZip": "09503",
+          "locationCountry": "United States"
+        }
+      ],
+      "studyCondition": {
+        "conditions": [
+          "Prostate Carcinoma"
+        ]
+      },
+      "studyPhase": "Phase 2",
+      "studyType": "Observational",
+      "studyGroups": [
+        {
+          "groupId": "0",
+          "groupDescription": "Civasheet 7",
+          "groupIntervention": "Radiotherapy:external-beam radiation"
+        },
+        {
+          "groupId": "1",
+          "groupDescription": "Radiotherapy:Civasheet 60 Gy or 75 Gy;",
+          "groupIntervention": "Radiotherapy:Civasheet 60 Gy or 75 Gy;"
+        }
+      ],
+      "treatmentDetails": {
+        "treatmentType": "Radiotherapy",
+        "treatmentStudied": "Radiotherapy: low dose rate brachytherapy + external-beam radiation"
+      },
+      "eligibilityCriteria": null
+    }
+  ]
+}

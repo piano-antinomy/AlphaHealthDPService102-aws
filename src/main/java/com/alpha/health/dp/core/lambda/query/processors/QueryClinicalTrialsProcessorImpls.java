@@ -11,18 +11,21 @@ import com.alpha.health.dp.core.lambda.model.trials.TreatmentDetails;
 import com.alpha.health.dp.core.lambda.model.trials.TrialIdentification;
 import com.alpha.health.dp.core.lambda.model.trials.TrialLocation;
 import com.alpha.health.dp.core.lambda.model.trials.TrialStatus;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.joda.JodaModule;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.joda.time.DateTime;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class QueryClinicalTrialsProcessorImpls implements ServiceRequestProcessor {
     private static final Logger LOGGER = LogManager.getLogger(QueryClinicalTrialsProcessorImpls.class);
+    private final ObjectMapper objectMapper = new ObjectMapper().registerModule(new JodaModule());
 
     @Override
     public ProcessorResponse process(ProcessorRequest request) {
@@ -42,15 +45,14 @@ public class QueryClinicalTrialsProcessorImpls implements ServiceRequestProcesso
     private ProcessorResponse buildResponse(
         QueryClinicalTrialsProcessorRequest queryClinicalTrialsProcessorRequest) {
         // Merge all location fields
+        try {
+            return objectMapper.readValue(
+                new File("src/main/java/com/alpha/health/dp/core/lambda/query/processors/mock_trials.json"),
+                QueryClinicalTrialsProcessorResponse.class);
 
-        List<ClinicalTrial> list = IntStream.range(1, 30)
-            .boxed()
-            .map(this::buildClinicalTrial)
-            .collect(Collectors.toList());
-
-        return QueryClinicalTrialsProcessorResponse.builder()
-            .clinicalTrialList(list)
-            .build();
+        } catch (final IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
