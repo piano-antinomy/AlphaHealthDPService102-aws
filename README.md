@@ -16,3 +16,9 @@ It is a [Maven](https://maven.apache.org/) based project, so you can open this p
  * `cdk docs`        open CDK documentation
 
 Enjoy!
+
+## Lambda tricks:
+
+the config file (e.g. `mock_trials.json`) under src/main/java will be copied over to lambda server and will be accessed by lambda function.
+
+the config file (e.g. `mock_trials.json`) directly under root folder here is only used for unit test.

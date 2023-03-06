@@ -47,7 +47,7 @@ public class QueryClinicalTrialsProcessorImpls implements ServiceRequestProcesso
         // Merge all location fields
         try {
             return objectMapper.readValue(
-                new File("src/main/java/com/alpha/health/dp/core/lambda/query/processors/mock_trials.json"),
+                new File("mock_trials.json"),
                 QueryClinicalTrialsProcessorResponse.class);
 
         } catch (final IOException e) {
