@@ -13,6 +13,6 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserConditions {
-    public String conditionName = "Shen Jing Bing";
+public class UserCondition {
+    public String conditionName;
 }

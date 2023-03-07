@@ -19,8 +19,11 @@ public class UserTNM {
     public DateTime dateOfStaging;
     public String t_StagePrimary;
     public String t_StageSecondary;
+    public String t_Method;
     public String n_StagePrimary;
     public String n_StageSecondary;
+    public String n_Method;
     public String m_StagePrimary;
     public String m_StageSecondary;
+    public String m_Method;
 }

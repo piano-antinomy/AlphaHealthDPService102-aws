@@ -21,11 +21,11 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserProfileConditionMetadata {
     private UserDemographics userDemographics;
-    private UserConditions userConditions;
-    private UserSurgeries userSurgeries;
-    private UserEBRT userEBRT;
+    private List<UserCondition> userConditions;
+    private List<UserSurgery> userSurgeries;
+    private List<UserEBRT> userEBRTs;
     public List<UserDrug> userDrugs;
-    private UserLabs userLabs;
-    public UserBiopsies userBiopsies;
-    public UserTNM userTNM;
+    private List<UserLab> userLabs;
+    public List<UserBiopsy> userBiopsies;
+    public List<UserTNM> userTNMs;
 }

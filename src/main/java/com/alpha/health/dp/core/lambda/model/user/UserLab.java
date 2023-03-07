@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.joda.time.DateTime;
 
 @Getter
 @Builder
@@ -13,7 +14,10 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserBiopsies {
-    public int gleasonScore;
-    public String others;
+public class UserLab {
+    public String specimen;
+    public String test;
+    public DateTime dateTime;
+    public float level;
+    public String positive;
 }
