@@ -14,5 +14,5 @@ import lombok.ToString;
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserCondition {
-    public String conditionName;
+    private String name;
 }

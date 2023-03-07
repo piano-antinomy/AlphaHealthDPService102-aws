@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 import org.joda.time.DateTime;
 
@@ -15,8 +16,11 @@ import org.joda.time.DateTime;
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserDemographics {
-    public DateTime dateOfBirth;
-    public String race;
-    public String gender;
-    public String maritalStatus;
+    private DateTime dateOfBirth;
+    private String race;
+    private String gender;
+    private String maritalStatus;
+
+    @Setter
+    private Number age;
 }

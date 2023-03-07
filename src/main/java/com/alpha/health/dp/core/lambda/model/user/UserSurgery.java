@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 import org.joda.time.DateTime;
 
@@ -15,9 +16,12 @@ import org.joda.time.DateTime;
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserSurgery {
-    public String name;
-    public DateTime date;
-    public String type;
-    public boolean lymphNodes;
-    public String purpose;
+    private String name;
+    private DateTime date;
+    private String type;
+    private boolean lymphNodes;
+    private String purpose;
+
+    @Setter
+    private Number durationDays;
 }

@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 import org.joda.time.DateTime;
 
@@ -15,9 +16,12 @@ import org.joda.time.DateTime;
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserLab {
-    public String specimen;
-    public String test;
-    public DateTime dateTime;
-    public float level;
-    public String positive;
+    private String specimen;
+    private String test;
+    private DateTime date;
+    private float level;
+    private String positive;
+
+    @Setter
+    private Number durationDays;
 }

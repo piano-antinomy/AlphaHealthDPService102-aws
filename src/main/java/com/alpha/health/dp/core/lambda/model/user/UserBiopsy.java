@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 import org.joda.time.DateTime;
 
@@ -15,10 +16,12 @@ import org.joda.time.DateTime;
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserBiopsy {
-    public int gleasonScore;
-    public int gleasonPrimary;
-    public int gleasonSecondary;
-    public int gleasonGrade;
-    public DateTime date;
+    private int gleasonScore;
+    private int gleasonPrimary;
+    private int gleasonSecondary;
+    private int gleasonGrade;
+    private DateTime date;
+    @Setter
+    private Number durationDays;
 
 }

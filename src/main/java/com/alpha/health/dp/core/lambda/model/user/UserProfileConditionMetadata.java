@@ -24,8 +24,8 @@ public class UserProfileConditionMetadata {
     private List<UserCondition> userConditions;
     private List<UserSurgery> userSurgeries;
     private List<UserEBRT> userEBRTs;
-    public List<UserDrug> userDrugs;
+    private List<UserDrug> userDrugs;
     private List<UserLab> userLabs;
-    public List<UserBiopsy> userBiopsies;
+    private List<UserBiopsy> userBiopsies;
     public List<UserTNM> userTNMs;
 }

@@ -1,8 +1,10 @@
 package com.alpha.health.dp.core.lambda.sql.transformer;
 
 import com.alpha.health.dp.core.lambda.model.user.UserBiopsy;
+import com.alpha.health.dp.core.lambda.model.user.UserCondition;
 import com.alpha.health.dp.core.lambda.model.user.UserDemographics;
 import com.alpha.health.dp.core.lambda.model.user.UserDrug;
+import com.alpha.health.dp.core.lambda.model.user.UserEBRT;
 import com.alpha.health.dp.core.lambda.model.user.UserLab;
 import com.alpha.health.dp.core.lambda.model.user.UserProfileConditionMetadata;
 import com.alpha.health.dp.core.lambda.model.user.UserSurgery;
@@ -21,8 +23,10 @@ public class DemoMockUserFactory {
                 .race("white")
                 .gender("male")
                 .build())
+            .userConditions(Arrays.asList(UserCondition.builder().name("prostate cancer").build()))
             .userTNMs(Collections.singletonList(UserTNM.builder()
                 .primaryCancer("prostate")
+                .dateOfStaging(DateTime.parse("2021-09-01"))
                 .t_StagePrimary("T0")
                 .t_StageSecondary("a")
                 .t_Method("0")
@@ -34,11 +38,11 @@ public class DemoMockUserFactory {
                 m_Method("c")
                 .build()))
             .userLabs(Arrays.asList(
-                UserLab.builder().specimen("blood").test("TPSA").dateTime(DateTime.parse("2022-06-10")).level(32).positive("").build(),
-                UserLab.builder().specimen("blood").test("TPSA").dateTime(DateTime.parse("2022-08-10")).level(5).positive("").build(),
-                UserLab.builder().specimen("blood").test("TPSA").dateTime(DateTime.parse("2022-09-10")).level(1).positive("").build(),
-                UserLab.builder().specimen("blood").test("TPSA").dateTime(DateTime.parse("2022-11-10")).level(0.5f).positive("").build(),
-                UserLab.builder().specimen("blood").test("TPSA").dateTime(DateTime.parse("2022-12-10")).level(0.05f).positive("").build()))
+                UserLab.builder().specimen("blood").test("TPSA").date(DateTime.parse("2022-06-10")).level(32).positive("").build(),
+                UserLab.builder().specimen("blood").test("TPSA").date(DateTime.parse("2022-08-10")).level(5).positive("").build(),
+                UserLab.builder().specimen("blood").test("TPSA").date(DateTime.parse("2022-09-10")).level(1).positive("").build(),
+                UserLab.builder().specimen("blood").test("TPSA").date(DateTime.parse("2022-11-10")).level(0.5f).positive("").build(),
+                UserLab.builder().specimen("blood").test("TPSA").date(DateTime.parse("2022-12-10")).level(0.05f).positive("").build()))
             .userBiopsies(Collections.singletonList(UserBiopsy.builder()
                 .gleasonScore(7)
                 .gleasonPrimary(3)
@@ -51,6 +55,10 @@ public class DemoMockUserFactory {
                 .date(DateTime.parse("2022-07-01"))
                 .type("robot-assisted")
                 .lymphNodes(true)
+                .purpose("radical")
+                .build()))
+            .userEBRTs(Arrays.asList(UserEBRT.builder()
+                .target("prostate")
                 .purpose("radical")
                 .build()))
             .userDrugs(Arrays.asList(

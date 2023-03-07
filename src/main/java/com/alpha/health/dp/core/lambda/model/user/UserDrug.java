@@ -10,19 +10,20 @@ import lombok.ToString;
 import org.joda.time.DateTime;
 
 @Getter
-@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserDrug {
-    public int cycles;
-    public String type;
-    public String disease;
-    public String purpose;
-    public String name;
-    public DateTime startDate;
-    public DateTime endDate;
-    public Number durationDays;
+    private int cycles;
+    private String type;
+    private String disease;
+    private String purpose;
+    private String name;
+    private DateTime startDate;
+    private DateTime endDate;
+
+    @Setter
+    private Number durationDays;
 }
