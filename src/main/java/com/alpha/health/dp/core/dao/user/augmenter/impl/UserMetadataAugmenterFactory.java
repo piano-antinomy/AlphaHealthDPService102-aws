@@ -7,9 +7,10 @@ import java.util.List;
 
 public class UserMetadataAugmenterFactory {
 
-    List<UserMetadataAugmenter> registry = Arrays.asList(
+    final private List<UserMetadataAugmenter> registry = Arrays.asList(
         new DateToDurationAugmenter()
     );
+
     public UserMetadataAugmenter getChainedAugmenter() {
         return new ChainedUserMetadataAugmenter(registry);
     }
