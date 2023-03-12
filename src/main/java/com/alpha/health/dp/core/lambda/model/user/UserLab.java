@@ -20,8 +20,10 @@ public class UserLab {
     private String test;
     private DateTime date;
     private float level;
-    private String positive;
+    private Boolean isPositive;
 
     @Setter
     private Number durationDays;
+    @Setter
+    private Boolean isLatest;
 }

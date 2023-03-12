@@ -1,5 +1,6 @@
 package com.alpha.health.dp.core.lambda.model.user;
 
+import com.alpha.health.dp.core.lambda.util.Duration;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,5 +26,5 @@ public class UserDrug {
     private DateTime endDate;
 
     @Setter
-    private Number durationDays;
+    private Duration durationWithdrawal;
 }

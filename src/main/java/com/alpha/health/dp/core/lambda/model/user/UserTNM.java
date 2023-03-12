@@ -30,4 +30,6 @@ public class UserTNM {
 
     @Setter
     private Number durationDays;
+    @Setter
+    private Boolean isLatest;
 }

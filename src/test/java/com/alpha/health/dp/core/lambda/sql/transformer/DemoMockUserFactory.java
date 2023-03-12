@@ -9,13 +9,14 @@ import com.alpha.health.dp.core.lambda.model.user.UserLab;
 import com.alpha.health.dp.core.lambda.model.user.UserProfileConditionMetadata;
 import com.alpha.health.dp.core.lambda.model.user.UserSurgery;
 import com.alpha.health.dp.core.lambda.model.user.UserTNM;
+import com.alpha.health.dp.core.lambda.util.Duration;
 import org.joda.time.DateTime;
 
 import java.util.Arrays;
 import java.util.Collections;
 
 public class DemoMockUserFactory {
-    protected UserProfileConditionMetadata getMockUser_1() {
+    protected UserProfileConditionMetadata getMockUser() {
         return UserProfileConditionMetadata.builder()
             .userDemographics(UserDemographics.builder()
                 .dateOfBirth(DateTime.parse("1960-09-01"))
@@ -25,24 +26,25 @@ public class DemoMockUserFactory {
                 .build())
             .userConditions(Arrays.asList(UserCondition.builder().name("prostate cancer").build()))
             .userTNMs(Collections.singletonList(UserTNM.builder()
-                .primaryCancer("prostate")
+                .primaryCancer("prostate cancer")
                 .dateOfStaging(DateTime.parse("2021-09-01"))
                 .t_StagePrimary("T0")
                 .t_StageSecondary("a")
-                .t_Method("0")
-                .n_StagePrimary("0").
+                .t_Method("c")
+                .n_StagePrimary("N1").
                 n_StageSecondary("").
-                n_Method("0").
-                m_StagePrimary("0").
+                n_Method("c").
+                m_StagePrimary("M1").
                 m_StageSecondary("").
                 m_Method("c")
+                    .isLatest(true)
                 .build()))
             .userLabs(Arrays.asList(
-                UserLab.builder().specimen("blood").test("TPSA").date(DateTime.parse("2022-06-10")).level(32).positive("").build(),
-                UserLab.builder().specimen("blood").test("TPSA").date(DateTime.parse("2022-08-10")).level(5).positive("").build(),
-                UserLab.builder().specimen("blood").test("TPSA").date(DateTime.parse("2022-09-10")).level(1).positive("").build(),
-                UserLab.builder().specimen("blood").test("TPSA").date(DateTime.parse("2022-11-10")).level(0.5f).positive("").build(),
-                UserLab.builder().specimen("blood").test("TPSA").date(DateTime.parse("2022-12-10")).level(0.05f).positive("").build()))
+                UserLab.builder().specimen("blood").test("TPSA").date(DateTime.parse("2022-06-10")).level(32).build(),
+                UserLab.builder().specimen("blood").test("TPSA").date(DateTime.parse("2022-08-10")).level(5).build(),
+                UserLab.builder().specimen("blood").test("TPSA").date(DateTime.parse("2022-09-10")).level(1).build(),
+                UserLab.builder().specimen("blood").test("TPSA").date(DateTime.parse("2022-11-10")).level(0.5f).build(),
+                UserLab.builder().specimen("blood").test("TPSA").date(DateTime.parse("2022-12-10")).level(2).isLatest(true).build()))
             .userBiopsies(Collections.singletonList(UserBiopsy.builder()
                 .gleasonScore(7)
                 .gleasonPrimary(3)
@@ -70,6 +72,32 @@ public class DemoMockUserFactory {
                     .startDate(DateTime.now().minusMonths(10))
                     .endDate(DateTime.now().minusMonths(1))
                     .build(),
+                    UserDrug.builder()
+                            .cycles(2)
+                            .type("ADT;")
+                            .name("afatinib")
+                            .purpose("adjuvant_ebrt")
+                            .startDate(DateTime.now().minusMonths(50))
+                            .endDate(DateTime.now().minusMonths(7))
+                            .build(),
+                    UserDrug.builder()
+                            .cycles(2)
+                            .type("chemotherapy;")
+                            .disease("prostate cancer")
+                            .name("drug1")
+                            .purpose("neoadjuvant")
+                            .startDate(DateTime.now().minusMonths(50))
+                            .endDate(DateTime.now().minusMonths(40))
+                            .build(),
+                    UserDrug.builder()
+                            .cycles(2)
+                            .disease("prostate cancer")
+                            .type("chemotherapy;")
+                            .name("drug2")
+                            .purpose("neoadjuvant")
+                            .startDate(DateTime.now().minusMonths(15))
+                            .endDate(DateTime.now().minusMonths(5))
+                            .build(),
                 UserDrug.builder()
                     .cycles(5)
                     .name("BCYY")
@@ -78,8 +106,13 @@ public class DemoMockUserFactory {
                     .type("EGFR inhibitor; targeted therapy;")
                     .name("XXXX")
                     .purpose("palliative")
-                    .build()
-            ))
+                    .build()))
+                /**
+                 * TODO update methods for PSA doubling time and life expectancy
+                 */
+                .userPSADoublingTime(Duration.builder().months(3).build())
+                .userLifeExpectancy(Duration.builder().weeks(20).build())
+
             .build();
     }
 }
