@@ -1,5 +1,6 @@
 package com.alpha.health.dp.core.lambda.model.user;
 
+import com.alpha.health.dp.core.lambda.util.Duration;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,5 +28,7 @@ public class UserProfileConditionMetadata {
     private List<UserDrug> userDrugs;
     private List<UserLab> userLabs;
     private List<UserBiopsy> userBiopsies;
-    public List<UserTNM> userTNMs;
+    private List<UserTNM> userTNMs;
+    private Duration userPSADoublingTime;
+    private Duration userLifeExpectancy;
 }

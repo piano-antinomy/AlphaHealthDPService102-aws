@@ -1,54 +1,76 @@
 package com.alpha.health.dp.core.lambda.sql.transformer;
 
+import com.alpha.health.dp.core.lambda.model.user.UserLab;
 import com.alpha.health.dp.core.lambda.model.user.UserProfileConditionMetadata;
-import org.joda.time.DateTime;
-import org.joda.time.Days;
-import org.joda.time.Years;
+import com.alpha.health.dp.core.lambda.util.Duration;
+import org.joda.time.*;
 import org.joo.libra.PredicateContext;
 import org.joo.libra.sql.SqlPredicate;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 public class LibraBackedSqlTransformerTest {
     final DemoMockUserFactory userFactory = new DemoMockUserFactory();
-    final UserProfileConditionMetadata user_1 = userFactory.getMockUser_1();
+    ArrayList<UserProfileConditionMetadata> users;
 
     @BeforeEach
     protected void setup() {
+        users = new ArrayList();
+
+        // TODO load test data from file
+        for (int i = 0; i < 5; i ++) {
+            users.add(userFactory.getMockUser());
+        }
+
         // preprocessing to populate
-        user_1.getUserDemographics()
-            .setAge(Years.yearsBetween(user_1.getUserDemographics().getDateOfBirth(), DateTime.now()).getYears());
+        for (UserProfileConditionMetadata user : users) {
+            user.getUserDemographics()
+                    .setAge(Years.yearsBetween(user.getUserDemographics().getDateOfBirth(), DateTime.now()).getYears());
 
-        user_1.getUserBiopsies().forEach(userBiopsy -> {
-            userBiopsy.setDurationDays(Days.daysBetween(userBiopsy.getDate(), DateTime.now()).getDays());
-        });
+            user.getUserBiopsies().forEach(userBiopsy -> {
+                userBiopsy.setDurationDays(Days.daysBetween(userBiopsy.getDate(), DateTime.now()).getDays());
+            });
 
-        user_1.getUserLabs().forEach(userLab -> {
-            userLab.setDurationDays(Days.daysBetween(userLab.getDate(), DateTime.now()).getDays());
-        });
+            user.getUserLabs().forEach(userLab -> {
+                userLab.setDurationDays(Days.daysBetween(userLab.getDate(), DateTime.now()).getDays());
+            });
 
-        user_1.getUserSurgeries().forEach(userSurgery -> {
-            userSurgery.setDurationDays(Days.daysBetween(userSurgery.getDate(), DateTime.now()).getDays());
-        });
+            user.getUserSurgeries().forEach(userSurgery -> {
+                userSurgery.setDurationDays(Days.daysBetween(userSurgery.getDate(), DateTime.now()).getDays());
+            });
 
-        user_1.getUserTNMs().forEach(userTNM -> {
-            userTNM.setDurationDays(Days.daysBetween(userTNM.getDateOfStaging(), DateTime.now()).getDays());
-        });
+            user.getUserTNMs().forEach(userTNM -> {
+                userTNM.setDurationDays(Days.daysBetween(userTNM.getDateOfStaging(), DateTime.now()).getDays());
+            });
+            user.getUserTNMs().forEach(userTNM -> {
+                /**
+                 * TODO tag whether a record is the latest
+                 */
 
-        user_1.getUserDrugs().forEach(userDrug -> {
-            userDrug.setDurationDays(Days.daysBetween(userDrug.getStartDate(), userDrug.getEndDate()).getDays());});
+            });
+
+            user.getUserDrugs().forEach(userDrug -> {
+                userDrug.setDurationWithdrawal(Duration.builder()
+                        .years(Years.yearsBetween(userDrug.getEndDate(), DateTime.now()).getYears())
+                        .months(Months.monthsBetween(userDrug.getEndDate(), DateTime.now()).getMonths())
+                        .days(Days.daysBetween(userDrug.getEndDate(), DateTime.now()).getDays()).build());
+            });
+
+        }
     }
 
     @Test
     protected void simpleSqlHappyCase() {
         final String demoSimpleFilter = "userDemographics.gender = 'male' and userDemographics.race == 'white' ";
         final String demoAgeYoungerThan30 = "userDemographics.age < 30";
-        final String demoAgeOlderThan70 = "userDemographics.age < 70";
+        final String demoAgeYoungerThan70 = "userDemographics.age < 70";
 
-        assertFilter(demoSimpleFilter, user_1, true);
-        assertFilter(demoAgeYoungerThan30, user_1, false);
-        assertFilter(demoAgeOlderThan70, user_1, true);
+        assertFilter(demoSimpleFilter, users.get(1), true);
+        assertFilter(demoAgeYoungerThan30, users.get(1), false);
+        assertFilter(demoAgeYoungerThan70, users.get(1), true);
     }
 
     @Test
@@ -56,7 +78,7 @@ public class LibraBackedSqlTransformerTest {
         final String userHasTakenADTFor6MoreMonths =
             "ANY $userDrug IN userDrugs satisfies $userDrug.name == 'afatinib' AND $userDrug.durationDays > 180";
 
-        assertFilter(userHasTakenADTFor6MoreMonths, user_1, true);
+        assertFilter(userHasTakenADTFor6MoreMonths, users.get(1), true);
     }
 
     @Test
@@ -64,7 +86,7 @@ public class LibraBackedSqlTransformerTest {
         final String userHasTakenADTFor10MoreMonths =
             "ANY $userDrug IN userDrugs satisfies $userDrug.name == 'afatinib' AND $userDrug.durationDays > 300";
 
-        assertFilter(userHasTakenADTFor10MoreMonths, user_1, false);
+        assertFilter(userHasTakenADTFor10MoreMonths, users.get(1), false);
     }
 
     /**
@@ -77,7 +99,7 @@ public class LibraBackedSqlTransformerTest {
          * Histologic confirmation of adenocarcinoma of the prostate
          */
         final String criteria_1 = "ANY $userCondition IN userConditions satisfies $userCondition.name contains 'prostate' ";
-        assertFilter(criteria_1, user_1, true);
+        assertFilter(criteria_1, users.get(1), true);
 
         /**
          * The patient must have received definitive local therapy for prostate cancer,
@@ -88,9 +110,86 @@ public class LibraBackedSqlTransformerTest {
             "(ANY $userSurgery IN userSurgeries satisfies $userSurgery.name = 'prostatectomy' AND $userSurgery.purpose = 'radical' ) " +
             " OR " +
             "(ANY $userEBRT IN userEBRTs satisfies $userEBRT.target contains 'prostatectomy' AND $userSurgery.purpose = 'radical' )";
-        assertFilter(criteria_2, user_1, true);
+        assertFilter(criteria_2, users.get(1), true);
     }
 
+    /**
+     * NCT test cases
+     */
+    @Test
+    protected void nctTestCases() {
+        ArrayList<ArrayList> inclusionCriteria = new ArrayList();
+        ArrayList<String> ic;
+        ArrayList<ArrayList> exclusionCriteria = new ArrayList();
+        ArrayList<String> ec;
+
+        /**
+         * NCT03503097
+         */
+        ic = new ArrayList();
+        ic.add("any $userTNM in userTNMs satisfies $userTNM.primaryCancer == 'prostate cancer' and $userTNM.n_StagePrimary == 'N1' and $userTNM.m_StagePrimary == 'M1'");
+        inclusionCriteria.add(ic);
+        ec = new ArrayList();
+        exclusionCriteria.add(ec);
+
+        /**
+         * NCT04472338
+         */
+        ic = new ArrayList();
+        ic.add("userDemographics.age >= 40");
+        inclusionCriteria.add(ic);
+        ec = new ArrayList();
+        //ec.add("any $userCondition in userConditions satisfies $userCondition.name == 'prostate cancer'");
+        exclusionCriteria.add(ec);
+
+        /**
+         * NCT04336943
+         */
+        ic = new ArrayList();
+        ic.add("any $userCondition in userConditions satisfies $userCondition.name == 'prostate cancer'");
+        ic.add("(any $userSurgery in userSurgeries satisfies $userSurgery.name == 'prostatectomy' and $userSurgery.purpose == 'radical')" +
+                " OR (any $userEBRT in userEBRTs satisfies $userEBRT.target contains 'prostate' and $userEBRT.purpose == 'radical')");
+        ic.add("(" +
+                "(any $userEBRT in userEBRTs satisfies $userEBRT.target contains 'prostate' and $userEBRT.purpose == 'radical')" +
+                " AND (any $userLab in userLabs satisfies $userLab.test == 'TPSA' and $userLab.level >= 2 and $userLab.isLatest == true)" +
+                " AND (userPSADoublingTime.months <= 10)" +
+                ")" +
+                " OR (any $userSurgery in userSurgeries satisfies $userSurgery.name == 'prostatectomy')");
+        ic.add("(none $userDrug in userDrugs satisfies $userDrug.type contains 'ADT' and $userDrug.purpose contains 'adjuvant_ebrt')" +
+                " OR (none $userDrug in userDrugs satisfies $userDrug.type contains 'ADT' and $userDrug.purpose contains 'adjuvant_ebrt' and $userDrug.durationWithdrawal.months < 6)");
+        ic.add("userDemographics.age > 18");
+        ic.add("userLifeExpectancy.weeks >= 16");
+        inclusionCriteria.add(ic);
+
+        ec = new ArrayList();
+        /**
+         * TODO "and not *any*" logic is wrong
+         * Prior chemotherapy for prostate cancer, unless done in the neoadjuvant setting, and if the last dose was > 6 months prior to enrollment
+         */
+        ec.add("any $userDrug in userDrugs satisfies $userDrug.disease == 'prostate cancer' and $userDrug.type contains 'chemotherapy'" +
+                " AND (NOT (any $userDrug in userDrugs satisfies $userDrug.type contains 'chemotherapy' and $userDrug.purpose contains 'neoadjuvant' and $userDrug.durationWithdrawal.months > 6))");
+        ec.add("any $userDrug in userDrugs satisfies $userDrug.type contains 'PD1' or $userDrug.type contains 'PD-L1'");
+        ec.add("any $userDrug in userDrugs satisfies $userDrug.type contains 'PARP'");
+        exclusionCriteria.add(ec);
+
+        for (int i = 0; i < inclusionCriteria.size(); i ++) {
+            UserProfileConditionMetadata user = users.get(i);
+            ic = inclusionCriteria.get(i);
+            ec = exclusionCriteria.get(i);
+
+            System.out.println("Testing inclusion criteria");
+            for (int j = 0; j < ic.size(); j ++) {
+                System.out.println(ic.get(j));
+                assertFilter(ic.get(j), user, true);
+            }
+
+            System.out.println("Testing exclusion criteria");
+            for (int j = 0; j < ec.size(); j ++) {
+                System.out.println(ec.get(j));
+                assertFilter(ec.get(j), user, false);
+            }
+        }
+    }
 
     private void assertFilter(final String sqlFilter, final UserProfileConditionMetadata user, final boolean expected) {
         final PredicateContext context = new PredicateContext(user);
