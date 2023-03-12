@@ -10,7 +10,7 @@ import org.joda.time.Days;
 import org.joda.time.Months;
 import org.joda.time.Years;
 
-public class DateToDurationAugmenter implements UserMetadataAugmenter {
+class DateToDurationAugmenter implements UserMetadataAugmenter {
 
     private static Logger LOGGER = LogManager.getLogger(DateToDurationAugmenter.class);
     @Override

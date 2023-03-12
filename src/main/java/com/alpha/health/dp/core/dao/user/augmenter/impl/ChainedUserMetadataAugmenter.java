@@ -6,10 +6,14 @@ import com.alpha.health.dp.core.lambda.model.user.UserProfileConditionMetadata;
 import java.util.Arrays;
 import java.util.List;
 
-public class ChainedUserMetadataAugmenter implements UserMetadataAugmenter {
-    List<UserMetadataAugmenter> registeredAugmenters;
+class ChainedUserMetadataAugmenter implements UserMetadataAugmenter {
+    final List<UserMetadataAugmenter> registeredAugmenters;
     public ChainedUserMetadataAugmenter(final UserMetadataAugmenter... augmenters) {
         registeredAugmenters = Arrays.asList(augmenters);
+    }
+
+    public ChainedUserMetadataAugmenter(final List<UserMetadataAugmenter> registeredAugmenters) {
+        this.registeredAugmenters = registeredAugmenters;
     }
     @Override
     public UserProfileConditionMetadata augment(UserProfileConditionMetadata originalMetadata) {

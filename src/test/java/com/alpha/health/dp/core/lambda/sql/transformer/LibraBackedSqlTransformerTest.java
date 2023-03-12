@@ -1,8 +1,7 @@
 package com.alpha.health.dp.core.lambda.sql.transformer;
 
 import com.alpha.health.dp.core.dao.user.augmenter.api.UserMetadataAugmenter;
-import com.alpha.health.dp.core.dao.user.augmenter.impl.ChainedUserMetadataAugmenter;
-import com.alpha.health.dp.core.dao.user.augmenter.impl.DateToDurationAugmenter;
+import com.alpha.health.dp.core.dao.user.augmenter.impl.UserMetadataAugmenterFactory;
 import com.alpha.health.dp.core.lambda.model.user.UserProfileConditionMetadata;
 import org.joo.libra.PredicateContext;
 import org.joo.libra.sql.SqlPredicate;
@@ -16,7 +15,7 @@ import java.util.stream.Collectors;
 
 public class LibraBackedSqlTransformerTest {
     final DemoMockUserFactory userFactory = new DemoMockUserFactory();
-    final UserMetadataAugmenter userMetadataAugmenter = new ChainedUserMetadataAugmenter(new DateToDurationAugmenter());
+    final UserMetadataAugmenter userMetadataAugmenter = new UserMetadataAugmenterFactory().getChainedAugmenter();
     List<UserProfileConditionMetadata> users;
 
     @BeforeEach
