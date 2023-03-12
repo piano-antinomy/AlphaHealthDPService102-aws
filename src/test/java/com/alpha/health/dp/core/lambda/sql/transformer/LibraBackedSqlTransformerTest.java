@@ -1,9 +1,11 @@
 package com.alpha.health.dp.core.lambda.sql.transformer;
 
-import com.alpha.health.dp.core.lambda.model.user.UserLab;
 import com.alpha.health.dp.core.lambda.model.user.UserProfileConditionMetadata;
 import com.alpha.health.dp.core.lambda.util.Duration;
-import org.joda.time.*;
+import org.joda.time.DateTime;
+import org.joda.time.Days;
+import org.joda.time.Months;
+import org.joda.time.Years;
 import org.joo.libra.PredicateContext;
 import org.joo.libra.sql.SqlPredicate;
 import org.junit.jupiter.api.Assertions;
@@ -76,7 +78,7 @@ public class LibraBackedSqlTransformerTest {
     @Test
     protected void ableToFindOneInListType_HappyCase() {
         final String userHasTakenADTFor6MoreMonths =
-            "ANY $userDrug IN userDrugs satisfies $userDrug.name == 'afatinib' AND $userDrug.durationDays > 180";
+            "ANY $userDrug IN userDrugs satisfies $userDrug.name == 'afatinib' AND $userDrug.durationWithdrawal.months > 6";
 
         assertFilter(userHasTakenADTFor6MoreMonths, users.get(1), true);
     }
@@ -84,7 +86,7 @@ public class LibraBackedSqlTransformerTest {
     @Test
     protected void ableToFindOneInListType_FailCase() {
         final String userHasTakenADTFor10MoreMonths =
-            "ANY $userDrug IN userDrugs satisfies $userDrug.name == 'afatinib' AND $userDrug.durationDays > 300";
+            "ANY $userDrug IN userDrugs satisfies $userDrug.name == 'afatinib' AND $userDrug.durationWithdrawal.days > 300";
 
         assertFilter(userHasTakenADTFor10MoreMonths, users.get(1), false);
     }
