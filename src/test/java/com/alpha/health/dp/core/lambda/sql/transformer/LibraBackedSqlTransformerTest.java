@@ -1,11 +1,9 @@
 package com.alpha.health.dp.core.lambda.sql.transformer;
 
+import com.alpha.health.dp.core.dao.user.augmenter.api.UserMetadataAugmenter;
+import com.alpha.health.dp.core.dao.user.augmenter.impl.ChainedUserMetadataAugmenter;
+import com.alpha.health.dp.core.dao.user.augmenter.impl.DateToDurationAugmenter;
 import com.alpha.health.dp.core.lambda.model.user.UserProfileConditionMetadata;
-import com.alpha.health.dp.core.lambda.util.Duration;
-import org.joda.time.DateTime;
-import org.joda.time.Days;
-import org.joda.time.Months;
-import org.joda.time.Years;
 import org.joo.libra.PredicateContext;
 import org.joo.libra.sql.SqlPredicate;
 import org.junit.jupiter.api.Assertions;
@@ -13,10 +11,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class LibraBackedSqlTransformerTest {
     final DemoMockUserFactory userFactory = new DemoMockUserFactory();
-    ArrayList<UserProfileConditionMetadata> users;
+    final UserMetadataAugmenter userMetadataAugmenter = new ChainedUserMetadataAugmenter(new DateToDurationAugmenter());
+    List<UserProfileConditionMetadata> users;
 
     @BeforeEach
     protected void setup() {
@@ -27,41 +28,7 @@ public class LibraBackedSqlTransformerTest {
             users.add(userFactory.getMockUser());
         }
 
-        // preprocessing to populate
-        for (UserProfileConditionMetadata user : users) {
-            user.getUserDemographics()
-                    .setAge(Years.yearsBetween(user.getUserDemographics().getDateOfBirth(), DateTime.now()).getYears());
-
-            user.getUserBiopsies().forEach(userBiopsy -> {
-                userBiopsy.setDurationDays(Days.daysBetween(userBiopsy.getDate(), DateTime.now()).getDays());
-            });
-
-            user.getUserLabs().forEach(userLab -> {
-                userLab.setDurationDays(Days.daysBetween(userLab.getDate(), DateTime.now()).getDays());
-            });
-
-            user.getUserSurgeries().forEach(userSurgery -> {
-                userSurgery.setDurationDays(Days.daysBetween(userSurgery.getDate(), DateTime.now()).getDays());
-            });
-
-            user.getUserTNMs().forEach(userTNM -> {
-                userTNM.setDurationDays(Days.daysBetween(userTNM.getDateOfStaging(), DateTime.now()).getDays());
-            });
-            user.getUserTNMs().forEach(userTNM -> {
-                /**
-                 * TODO tag whether a record is the latest
-                 */
-
-            });
-
-            user.getUserDrugs().forEach(userDrug -> {
-                userDrug.setDurationWithdrawal(Duration.builder()
-                        .years(Years.yearsBetween(userDrug.getEndDate(), DateTime.now()).getYears())
-                        .months(Months.monthsBetween(userDrug.getEndDate(), DateTime.now()).getMonths())
-                        .days(Days.daysBetween(userDrug.getEndDate(), DateTime.now()).getDays()).build());
-            });
-
-        }
+        users = users.stream().map(userMetadataAugmenter::augment).collect(Collectors.toList());
     }
 
     @Test
