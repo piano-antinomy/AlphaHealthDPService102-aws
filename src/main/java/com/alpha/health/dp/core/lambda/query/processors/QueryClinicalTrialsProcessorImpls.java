@@ -11,8 +11,8 @@ import com.alpha.health.dp.core.lambda.model.trials.TreatmentDetails;
 import com.alpha.health.dp.core.lambda.model.trials.TrialIdentification;
 import com.alpha.health.dp.core.lambda.model.trials.TrialLocation;
 import com.alpha.health.dp.core.lambda.model.trials.TrialStatus;
+import com.alpha.health.dp.core.lambda.util.SingletonInstanceFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.joda.JodaModule;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.joda.time.DateTime;
@@ -25,7 +25,7 @@ import java.util.List;
 
 public class QueryClinicalTrialsProcessorImpls implements ServiceRequestProcessor {
     private static final Logger LOGGER = LogManager.getLogger(QueryClinicalTrialsProcessorImpls.class);
-    private final ObjectMapper objectMapper = new ObjectMapper().registerModule(new JodaModule());
+    private final ObjectMapper objectMapper = SingletonInstanceFactory.getObjectMapperInstance();
 
     @Override
     public ProcessorResponse process(ProcessorRequest request) {

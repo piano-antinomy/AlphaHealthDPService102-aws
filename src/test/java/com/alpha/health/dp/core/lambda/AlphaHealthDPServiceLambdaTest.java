@@ -15,7 +15,7 @@ public class AlphaHealthDPServiceLambdaTest {
         // Arrange
         Map<String, Object> request = new HashMap<String, Object>() {{
             put("resource", "/query/clinicalTrials ");
-            put("queryStringParameters", Map.of("location", "Seattle", "condition", "migraine"));
+            put("queryStringParameters", Map.of("location", "Seattle", "condition", "migraine","userProfileId",""));
         }};
 
         // Act
@@ -36,7 +36,7 @@ public class AlphaHealthDPServiceLambdaTest {
         DPServiceResponse response = target.handleRequest(request, null);
 
         // Assert
-        Assertions.assertEquals(200, response.getStatusCode());
+        Assertions.assertEquals(401, response.getStatusCode());
     }
 
     @Test
@@ -45,13 +45,12 @@ public class AlphaHealthDPServiceLambdaTest {
         final String trialId = "NCT04472338";
         Map<String, Object> request = new HashMap<String, Object>() {{
             put("resource", "/query/clinicalTrials ");
-            put("queryStringParameters", Map.of("location", "United States", "condition", trialId));
+            put("queryStringParameters", Map.of("location", "United States", "condition", trialId, "userProfileId",""));
         }};
 
         // Act
         DPServiceResponse response = target.handleRequest(request, null);
 
-        System.out.println(response.getBody());
         // Assert
         Assertions.assertEquals(200, response.getStatusCode());
         Assertions.assertTrue(response.getBody().contains(trialId));

@@ -84,6 +84,10 @@ public class AlphaHealthDPServiceLambda implements RequestHandler<Map<String, Ob
     private ProcessorRequest generateProcessorRequest(Map<String, Object> input, String pathName) {
         final Map<String, String> queryParams = (Map<String, String>) input.get(QUERY_PARAMS);
 
+        if (queryParams == null) {
+            throw new IllegalArgumentException(pathName + " shall have userProfileId populated in parameter");
+        }
+
         LOGGER.info("parsing from query params: " + queryParams);
 
         final String userProfileId = queryParams.get("userProfileId");
@@ -97,9 +101,9 @@ public class AlphaHealthDPServiceLambda implements RequestHandler<Map<String, Ob
             return QueryClinicalTrialsProcessorRequest.builder()
                 .userProfileId(userProfileId)
                 .condition(
-                    queryParams != null ? queryParams.getOrDefault("condition", DEFAULT_EMPTY) : DEFAULT_EMPTY)
+                    queryParams.getOrDefault("condition", DEFAULT_EMPTY))
                 .location(
-                    queryParams != null ? queryParams.getOrDefault("location", DEFAULT_EMPTY) : DEFAULT_EMPTY)
+                    queryParams.getOrDefault("location", DEFAULT_EMPTY))
                 .build();
         } if (QUERY_USER_PROFILE_PATH.equals(pathName)) {
 
