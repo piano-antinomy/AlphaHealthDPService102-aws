@@ -21,6 +21,7 @@ import java.util.List;
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserProfileConditionMetadata {
+    private UserIdentification userIdentification;
     private UserDemographics userDemographics;
     private List<UserCondition> userConditions;
     private List<UserSurgery> userSurgeries;

@@ -25,7 +25,7 @@ public class ClinicalTrialsGovClientTest {
     protected void test_clinicalTrialsGovReturnsForEmptyRequest() {
         // Arrange
         final QueryClinicalTrialsProcessorRequest request =
-            new QueryClinicalTrialsProcessorRequest("", "");
+            new QueryClinicalTrialsProcessorRequest("", "", "");
 
         // Act
         ClinicalTrialGovClientResponse response = target.getStudiesWithSpecifiedFields(request);
@@ -38,7 +38,7 @@ public class ClinicalTrialsGovClientTest {
     protected void test_clinicalTrialsGovReturnsForLocationQuery() {
         // Arrange
         final QueryClinicalTrialsProcessorRequest request =
-            new QueryClinicalTrialsProcessorRequest("", "Seattle");
+            new QueryClinicalTrialsProcessorRequest("", "Seattle","any");
 
         // Act
         ClinicalTrialGovClientResponse response = target.getStudiesWithSpecifiedFields(request);
@@ -60,7 +60,7 @@ public class ClinicalTrialsGovClientTest {
     protected void test_clinicalTrialsGovReturnsForAllFieldsQuery() {
         // Arrange
         final QueryClinicalTrialsProcessorRequest request =
-            new QueryClinicalTrialsProcessorRequest("migraine", "Seattle");
+            new QueryClinicalTrialsProcessorRequest("migraine", "Seattle", "id");
 
         System.out.println(request);
     }

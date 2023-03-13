@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 public class QueryClinicalTrialsProcessorRequest extends ProcessorRequest {
     private String condition;
     private String location;
+    private String userProfileId;
 
     @Override
     public String toString() {

@@ -4,17 +4,18 @@ import com.alpha.health.dp.core.lambda.model.DPServiceResponse;
 import com.alpha.health.dp.core.lambda.model.processor.ProcessorRequest;
 import com.alpha.health.dp.core.lambda.model.processor.ProcessorResponse;
 import com.alpha.health.dp.core.lambda.model.processor.QueryClinicalTrialsProcessorRequest;
+import com.alpha.health.dp.core.lambda.model.processor.QueryUserProfilesProcessorRequest;
 import com.alpha.health.dp.core.lambda.query.processors.QueryClinicalTrialsProcessorImpls;
+import com.alpha.health.dp.core.lambda.query.processors.QueryUserProfilesProcessorImpl;
 import com.alpha.health.dp.core.lambda.query.processors.ServiceRequestProcessor;
+import com.alpha.health.dp.core.lambda.util.SingletonInstanceFactory;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.joda.JodaModule;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,13 +28,14 @@ public class AlphaHealthDPServiceLambda implements RequestHandler<Map<String, Ob
     private static final String QUERY_PARAMS = "queryStringParameters";
     private static final String DEFAULT_EMPTY = "";
     private static final String QUERY_CLINICAL_TRIALS_PATH = "/query/clinicalTrials";
+    private static final String QUERY_USER_PROFILE_PATH =  "/query/userProfiles";
     private static final Logger LOGGER = LogManager.getLogger(AlphaHealthDPServiceLambda.class);
     // Use this map instead of Guice dependency injection to save lambda init time.
     private final Map<String, ServiceRequestProcessor> processorMap = new HashMap<String, ServiceRequestProcessor>(){{
         put(QUERY_CLINICAL_TRIALS_PATH, new QueryClinicalTrialsProcessorImpls());
+        put(QUERY_USER_PROFILE_PATH, new QueryUserProfilesProcessorImpl());
     }};
-    private final ObjectMapper objectMapper =
-        new ObjectMapper().registerModule(new JodaModule()).setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
+    private final ObjectMapper objectMapper = SingletonInstanceFactory.getObjectMapperInstance();
 
     @Override
     public DPServiceResponse handleRequest(Map<String, Object> input, Context context) {
@@ -56,13 +58,13 @@ public class AlphaHealthDPServiceLambda implements RequestHandler<Map<String, Ob
                 .build();
         } catch (final JsonProcessingException e) {
             LOGGER.error("Failed to produce json responses", e);
-            return buildErrorResponse(500, "InternalServerError");
+            return buildErrorResponse(500, "InternalServerError " + e.getMessage());
         } catch (final IllegalArgumentException e) {
             LOGGER.error("Failed to respond due to client error", e);
-            return buildErrorResponse(401, "InvalidParameterException");
+            return buildErrorResponse(401, "InvalidParameterException " + e.getMessage());
         } catch (final RuntimeException e) {
             LOGGER.error("Failed to respond", e);
-            return buildErrorResponse(500, "InternalServerError");
+            return buildErrorResponse(500, "InternalServerError " + e.getMessage());
         }
     }
 
@@ -82,14 +84,27 @@ public class AlphaHealthDPServiceLambda implements RequestHandler<Map<String, Ob
     private ProcessorRequest generateProcessorRequest(Map<String, Object> input, String pathName) {
         final Map<String, String> queryParams = (Map<String, String>) input.get(QUERY_PARAMS);
 
+        LOGGER.info("parsing from query params: " + queryParams);
+
+        final String userProfileId = queryParams.get("userProfileId");
+
+        if (userProfileId == null) {
+            throw new IllegalArgumentException("userProfileId is a required field");
+        }
+
         if (QUERY_CLINICAL_TRIALS_PATH.equals(pathName)) {
-            LOGGER.info("parsing from query params: " + queryParams);
 
             return QueryClinicalTrialsProcessorRequest.builder()
+                .userProfileId(userProfileId)
                 .condition(
                     queryParams != null ? queryParams.getOrDefault("condition", DEFAULT_EMPTY) : DEFAULT_EMPTY)
                 .location(
                     queryParams != null ? queryParams.getOrDefault("location", DEFAULT_EMPTY) : DEFAULT_EMPTY)
+                .build();
+        } if (QUERY_USER_PROFILE_PATH.equals(pathName)) {
+
+            return QueryUserProfilesProcessorRequest.builder()
+                .userProfileId(userProfileId)
                 .build();
         } else {
             throw new IllegalArgumentException("unsupported path: " + pathName);

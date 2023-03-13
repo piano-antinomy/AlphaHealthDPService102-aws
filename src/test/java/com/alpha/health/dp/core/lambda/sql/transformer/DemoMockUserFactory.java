@@ -5,6 +5,7 @@ import com.alpha.health.dp.core.lambda.model.user.UserCondition;
 import com.alpha.health.dp.core.lambda.model.user.UserDemographics;
 import com.alpha.health.dp.core.lambda.model.user.UserDrug;
 import com.alpha.health.dp.core.lambda.model.user.UserEBRT;
+import com.alpha.health.dp.core.lambda.model.user.UserIdentification;
 import com.alpha.health.dp.core.lambda.model.user.UserLab;
 import com.alpha.health.dp.core.lambda.model.user.UserProfileConditionMetadata;
 import com.alpha.health.dp.core.lambda.model.user.UserSurgery;
@@ -18,6 +19,9 @@ import java.util.Collections;
 public class DemoMockUserFactory {
     protected UserProfileConditionMetadata getMockUser() {
         return UserProfileConditionMetadata.builder()
+            .userIdentification(UserIdentification.builder()
+                .userProfileId("1A35624F-E2F6-4A3E-BDA8-CBEA61AC91DB")
+                .build())
             .userDemographics(UserDemographics.builder()
                 .dateOfBirth(DateTime.parse("1960-09-01"))
                 .maritalStatus("married")
