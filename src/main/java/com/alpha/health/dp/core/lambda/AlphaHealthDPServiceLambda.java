@@ -90,7 +90,7 @@ public class AlphaHealthDPServiceLambda implements RequestHandler<Map<String, Ob
 
         LOGGER.info("parsing from query params: " + queryParams);
 
-        final String userProfileId = queryParams.get("userProfileId");
+        final String userProfileId = queryParams.get("userProfileId").strip();
 
         if (userProfileId == null) {
             throw new IllegalArgumentException("userProfileId is a required field");
