@@ -1,5 +1,6 @@
 package com.alpha.health.dp.core.lambda.model.user;
 
+import com.alpha.health.dp.core.lambda.util.Duration;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,12 +17,16 @@ import org.joda.time.DateTime;
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserBiopsy {
-    private int gleasonScore;
+    private String tissue;
     private int gleasonPrimary;
     private int gleasonSecondary;
-    private int gleasonGrade;
     private DateTime date;
     @Setter
-    private Number durationDays;
-
+    private int gleasonScore;
+    @Setter
+    private int gleasonGrade;
+    @Setter
+    private Duration duration;
+    @Setter
+    private Boolean isLatest;
 }

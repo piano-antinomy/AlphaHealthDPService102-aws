@@ -1,68 +1,55 @@
 package com.alpha.health.dp.core.lambda.sql.transformer;
 
 import com.alpha.health.dp.core.lambda.model.user.UserProfileConditionMetadata;
-import com.alpha.health.dp.core.lambda.util.Duration;
-import org.joda.time.DateTime;
-import org.joda.time.Days;
-import org.joda.time.Months;
-import org.joda.time.Years;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.joda.JodaModule;
 import org.joo.libra.PredicateContext;
 import org.joo.libra.sql.SqlPredicate;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class LibraBackedSqlTransformerTest {
     final DemoMockUserFactory userFactory = new DemoMockUserFactory();
+    final String userDataPath = "data/users/";
     ArrayList<UserProfileConditionMetadata> users;
 
     @BeforeEach
     protected void setup() {
+        // load user data from json files
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.registerModule(new JodaModule());
         users = new ArrayList();
-
-        // TODO load test data from file
-        for (int i = 0; i < 5; i ++) {
-            users.add(userFactory.getMockUser());
+        File directory = new File(userDataPath);
+        if (directory.isDirectory()) {
+            for (int i = 1; i <= directory.listFiles().length; i ++) {
+                try {
+                    String json = new String(Files.readAllBytes(Paths.get(userDataPath + Integer.toString(i) + ".json")));
+                    users.add(objectMapper.readValue(json, UserProfileConditionMetadata.class));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
         // preprocessing to populate
         for (UserProfileConditionMetadata user : users) {
-            user.getUserDemographics()
-                    .setAge(Years.yearsBetween(user.getUserDemographics().getDateOfBirth(), DateTime.now()).getYears());
-
-            user.getUserBiopsies().forEach(userBiopsy -> {
-                userBiopsy.setDurationDays(Days.daysBetween(userBiopsy.getDate(), DateTime.now()).getDays());
-            });
-
-            user.getUserLabs().forEach(userLab -> {
-                userLab.setDurationDays(Days.daysBetween(userLab.getDate(), DateTime.now()).getDays());
-            });
-
-            user.getUserSurgeries().forEach(userSurgery -> {
-                userSurgery.setDurationDays(Days.daysBetween(userSurgery.getDate(), DateTime.now()).getDays());
-            });
-
-            user.getUserTNMs().forEach(userTNM -> {
-                userTNM.setDurationDays(Days.daysBetween(userTNM.getDateOfStaging(), DateTime.now()).getDays());
-            });
-            user.getUserTNMs().forEach(userTNM -> {
-                /**
-                 * TODO tag whether a record is the latest
-                 */
-
-            });
-
-            user.getUserDrugs().forEach(userDrug -> {
-                userDrug.setDurationWithdrawal(Duration.builder()
-                        .years(Years.yearsBetween(userDrug.getEndDate(), DateTime.now()).getYears())
-                        .months(Months.monthsBetween(userDrug.getEndDate(), DateTime.now()).getMonths())
-                        .days(Days.daysBetween(userDrug.getEndDate(), DateTime.now()).getDays()).build());
-            });
-
+            user.populateDerivedFields();
         }
     }
+
+    /*
+    @Test
+    protected void test () {
+        userFactory.getMockUser();
+    }
+    */
 
     @Test
     protected void simpleSqlHappyCase() {
@@ -111,7 +98,7 @@ public class LibraBackedSqlTransformerTest {
         final String criteria_2 =
             "(ANY $userSurgery IN userSurgeries satisfies $userSurgery.name = 'prostatectomy' AND $userSurgery.purpose = 'radical' ) " +
             " OR " +
-            "(ANY $userEBRT IN userEBRTs satisfies $userEBRT.target contains 'prostatectomy' AND $userSurgery.purpose = 'radical' )";
+            "(ANY $userRadiotherapy IN userRadiotherapies satisfies $userRadiotherapy.target contains 'prostate')";
         assertFilter(criteria_2, users.get(1), true);
     }
 
@@ -126,6 +113,16 @@ public class LibraBackedSqlTransformerTest {
         ArrayList<String> ec;
 
         /**
+         * NCT04472338
+         */
+        ic = new ArrayList();
+        ic.add("userDemographics.age >= 40");
+        inclusionCriteria.add(ic);
+        ec = new ArrayList();
+        ec.add("any $userCondition in userConditions satisfies $userCondition.name == 'prostate cancer'");
+        exclusionCriteria.add(ec);
+
+        /**
          * NCT03503097
          */
         ic = new ArrayList();
@@ -135,24 +132,14 @@ public class LibraBackedSqlTransformerTest {
         exclusionCriteria.add(ec);
 
         /**
-         * NCT04472338
-         */
-        ic = new ArrayList();
-        ic.add("userDemographics.age >= 40");
-        inclusionCriteria.add(ic);
-        ec = new ArrayList();
-        //ec.add("any $userCondition in userConditions satisfies $userCondition.name == 'prostate cancer'");
-        exclusionCriteria.add(ec);
-
-        /**
          * NCT04336943
          */
         ic = new ArrayList();
         ic.add("any $userCondition in userConditions satisfies $userCondition.name == 'prostate cancer'");
         ic.add("(any $userSurgery in userSurgeries satisfies $userSurgery.name == 'prostatectomy' and $userSurgery.purpose == 'radical')" +
-                " OR (any $userEBRT in userEBRTs satisfies $userEBRT.target contains 'prostate' and $userEBRT.purpose == 'radical')");
+                " OR (any $userRadiotherapy in userRadiotherapies satisfies $userRadiotherapy.name == 'EBRT' and  $userRadiotherapy.target contains 'prostate' and $userRadiotherapy.purpose == 'radical')");
         ic.add("(" +
-                "(any $userEBRT in userEBRTs satisfies $userEBRT.target contains 'prostate' and $userEBRT.purpose == 'radical')" +
+                "(any $userRadiotherapy in userRadiotherapies satisfies $userRadiotherapy.name == 'EBRT' and $userRadiotherapy.target contains 'prostate' and $userRadiotherapy.purpose == 'radical')" +
                 " AND (any $userLab in userLabs satisfies $userLab.test == 'TPSA' and $userLab.level >= 2 and $userLab.isLatest == true)" +
                 " AND (userPSADoublingTime.months <= 10)" +
                 ")" +
@@ -164,12 +151,9 @@ public class LibraBackedSqlTransformerTest {
         inclusionCriteria.add(ic);
 
         ec = new ArrayList();
-        /**
-         * TODO "and not *any*" logic is wrong
-         * Prior chemotherapy for prostate cancer, unless done in the neoadjuvant setting, and if the last dose was > 6 months prior to enrollment
-         */
-        ec.add("any $userDrug in userDrugs satisfies $userDrug.disease == 'prostate cancer' and $userDrug.type contains 'chemotherapy'" +
-                " AND (NOT (any $userDrug in userDrugs satisfies $userDrug.type contains 'chemotherapy' and $userDrug.purpose contains 'neoadjuvant' and $userDrug.durationWithdrawal.months > 6))");
+        ec.add("any $userDrug in userDrugs satisfies" +
+                " ($userDrug.disease == 'prostate cancer' and $userDrug.type contains 'chemotherapy')" +
+                " and (not ($userDrug.purpose contains 'neoadjuvant' and $userDrug.durationWithdrawal.months > 6))");
         ec.add("any $userDrug in userDrugs satisfies $userDrug.type contains 'PD1' or $userDrug.type contains 'PD-L1'");
         ec.add("any $userDrug in userDrugs satisfies $userDrug.type contains 'PARP'");
         exclusionCriteria.add(ec);

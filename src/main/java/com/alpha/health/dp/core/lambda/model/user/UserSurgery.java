@@ -1,5 +1,6 @@
 package com.alpha.health.dp.core.lambda.model.user;
 
+import com.alpha.health.dp.core.lambda.util.Duration;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,9 +20,8 @@ public class UserSurgery {
     private String name;
     private DateTime date;
     private String type;
-    private boolean lymphNodes;
+    private Boolean hasLymphNodeDissection;
     private String purpose;
-
     @Setter
-    private Number durationDays;
+    private Duration duration;
 }

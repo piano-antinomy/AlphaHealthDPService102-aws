@@ -17,7 +17,7 @@ import org.joda.time.DateTime;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserTNM {
     private String primaryCancer;
-    private DateTime dateOfStaging;
+    private DateTime date;
     private String t_StagePrimary;
     private String t_StageSecondary;
     private String t_Method;
@@ -28,8 +28,6 @@ public class UserTNM {
     private String m_StageSecondary;
     private String m_Method;
 
-    @Setter
-    private Number durationDays;
     @Setter
     private Boolean isLatest;
 }
