@@ -23,7 +23,5 @@ public class UserLab {
     private Boolean isPositive;
 
     @Setter
-    private Number durationDays;
-    @Setter
     private Boolean isLatest;
 }

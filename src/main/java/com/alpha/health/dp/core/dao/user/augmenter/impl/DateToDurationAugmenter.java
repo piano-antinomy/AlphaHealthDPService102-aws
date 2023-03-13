@@ -19,7 +19,9 @@ class DateToDurationAugmenter implements UserMetadataAugmenter {
         LOGGER.info("DateToDurationAugmenter starts augmenting userProfileData");
 
         final UserProfileConditionMetadata user = originalMetadata;
+        user.populateDerivedFields();
 
+        /*
         user.getUserDemographics()
             .setAge(Years.yearsBetween(user.getUserDemographics().getDateOfBirth(), DateTime.now()).getYears());
 
@@ -39,19 +41,13 @@ class DateToDurationAugmenter implements UserMetadataAugmenter {
             userTNM.setDurationDays(Days.daysBetween(userTNM.getDateOfStaging(), DateTime.now()).getDays());
         });
 
-        user.getUserTNMs().forEach(userTNM -> {
-            /**
-             * TODO tag whether a record is the latest
-             */
-
-        });
-
         user.getUserDrugs().forEach(userDrug -> {
             userDrug.setDurationWithdrawal(Duration.builder()
                 .years(Years.yearsBetween(userDrug.getEndDate(), DateTime.now()).getYears())
                 .months(Months.monthsBetween(userDrug.getEndDate(), DateTime.now()).getMonths())
                 .days(Days.daysBetween(userDrug.getEndDate(), DateTime.now()).getDays()).build());
         });
+        */
 
         return user;
     }

@@ -17,14 +17,15 @@ import org.joda.time.DateTime;
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserDrug {
-    private int cycles;
-    private String type;
+    private String name;
     private String disease;
     private String purpose;
-    private String name;
     private DateTime startDate;
     private DateTime endDate;
+    private int cycles;
 
+    @Setter
+    private String type;
     @Setter
     private Duration durationWithdrawal;
 }
