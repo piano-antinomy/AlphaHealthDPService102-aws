@@ -1,0 +1,149 @@
+{
+  "userDemographics" : {
+    "dateOfBirth" : "1960-09-01T07:00:00.000Z",
+    "race" : "white",
+    "gender" : "male",
+    "maritalStatus" : "married",
+    "age" : null
+  },
+  "userConditions" : [ {
+    "name" : "prostate cancer"
+  } ],
+  "userSurgeries" : [ {
+    "name" : "prostatectomy",
+    "date" : "2022-07-01T07:00:00.000Z",
+    "type" : "robot-assisted",
+    "hasLymphNodeDissection" : true,
+    "purpose" : "radical",
+    "duration" : null
+  } ],
+  "userRadiotherapies" : [ {
+    "name" : "EBRT",
+    "type" : null,
+    "region" : null,
+    "target" : "prostate",
+    "dose" : null,
+    "purpose" : "radical",
+    "startDate" : null,
+    "endDate" : "2022-09-01T07:00:00.000Z",
+    "durationWithdrawal" : null
+  } ],
+  "userDrugs" : [ {
+    "name" : "afatinib",
+    "disease" : null,
+    "purpose" : "palliative",
+    "startDate" : "2022-05-13T04:22:33.398Z",
+    "endDate" : "2023-02-13T05:22:33.398Z",
+    "cycles" : 2,
+    "type" : "EGFR inhibitor; targeted therapy;",
+    "durationWithdrawal" : null
+  }, {
+    "name" : "afatinib",
+    "disease" : null,
+    "purpose" : "adjuvant_ebrt",
+    "startDate" : "2019-01-13T05:22:33.398Z",
+    "endDate" : "2022-08-13T04:22:33.398Z",
+    "cycles" : 2,
+    "type" : "ADT;",
+    "durationWithdrawal" : null
+  }, {
+    "name" : "drug1",
+    "disease" : "prostate cancer",
+    "purpose" : "neoadjuvant",
+    "startDate" : "2019-01-13T05:22:33.398Z",
+    "endDate" : "2019-11-13T05:22:33.398Z",
+    "cycles" : 2,
+    "type" : "chemotherapy;",
+    "durationWithdrawal" : null
+  }, {
+    "name" : "drug2",
+    "disease" : "prostate cancer",
+    "purpose" : "neoadjuvant",
+    "startDate" : "2021-07-13T04:22:33.398Z",
+    "endDate" : "2022-05-13T04:22:33.398Z",
+    "cycles" : 2,
+    "type" : "chemotherapy;",
+    "durationWithdrawal" : null
+  }, {
+    "name" : "XXXX",
+    "disease" : null,
+    "purpose" : "palliative",
+    "startDate" : "2022-10-13T04:22:33.398Z",
+    "endDate" : "2023-02-13T05:22:33.398Z",
+    "cycles" : 5,
+    "type" : "EGFR inhibitor; targeted therapy;",
+    "durationWithdrawal" : null
+  } ],
+  "userLabs" : [ {
+    "specimen" : "blood",
+    "test" : "TPSA",
+    "date" : "2022-06-10T07:00:00.000Z",
+    "level" : 32.0,
+    "isPositive" : null,
+    "isLatest" : null
+  }, {
+    "specimen" : "blood",
+    "test" : "TPSA",
+    "date" : "2022-08-10T07:00:00.000Z",
+    "level" : 5.0,
+    "isPositive" : null,
+    "isLatest" : null
+  }, {
+    "specimen" : "blood",
+    "test" : "TPSA",
+    "date" : "2022-09-10T07:00:00.000Z",
+    "level" : 1.0,
+    "isPositive" : null,
+    "isLatest" : null
+  }, {
+    "specimen" : "blood",
+    "test" : "TPSA",
+    "date" : "2022-11-10T08:00:00.000Z",
+    "level" : 0.5,
+    "isPositive" : null,
+    "isLatest" : null
+  }, {
+    "specimen" : "blood",
+    "test" : "TPSA",
+    "date" : "2022-12-10T08:00:00.000Z",
+    "level" : 2.0,
+    "isPositive" : null,
+    "isLatest" : true
+  } ],
+  "userBiopsies" : [ {
+    "tissue" : null,
+    "gleasonPrimary" : 3,
+    "gleasonSecondary" : 4,
+    "date" : "2022-06-15T07:00:00.000Z",
+    "gleasonScore" : 7,
+    "gleasonGrade" : 2,
+    "duration" : null,
+    "isLatest" : null
+  } ],
+  "userTNMs" : [ {
+    "primaryCancer" : "prostate cancer",
+    "date" : "2021-09-01T07:00:00.000Z",
+    "t_StagePrimary" : "T0",
+    "t_StageSecondary" : "a",
+    "t_Method" : "c",
+    "n_StagePrimary" : "N1",
+    "n_StageSecondary" : "",
+    "n_Method" : "c",
+    "m_StagePrimary" : "M1",
+    "m_StageSecondary" : "",
+    "m_Method" : "c",
+    "isLatest" : true
+  } ],
+  "userPSADoublingTime" : {
+    "years" : null,
+    "months" : 3,
+    "weeks" : null,
+    "days" : null
+  },
+  "userLifeExpectancy" : {
+    "years" : null,
+    "months" : null,
+    "weeks" : 20,
+    "days" : null
+  }
+}
