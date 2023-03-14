@@ -55,6 +55,6 @@ public class AlphaHealthDPServiceLambdaTest {
         Assertions.assertEquals(200, response.getStatusCode());
         Assertions.assertTrue(response.getBody().contains(trialId));
 
-
+        System.out.println(response.getBody());
     }
 }

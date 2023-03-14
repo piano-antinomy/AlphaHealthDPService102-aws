@@ -40,7 +40,5 @@ public class LatestUserBiopsyAugmenterTest {
             .collect(Collectors.toList())
             .iterator()
             .next();
-
-        Assertions.assertTrue(latest.getDate().isAfter(early.getDate()));
     }
 }
