@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 import java.util.List;
@@ -26,9 +27,16 @@ public class UserProfileConditionMetadata {
     private List<UserCondition> userConditions;
     private List<UserSurgery> userSurgeries;
     private List<UserEBRT> userEBRTs;
+
     private List<UserDrug> userDrugs;
+
+    @Setter
     private List<UserLab> userLabs;
+
+    @Setter
     private List<UserBiopsy> userBiopsies;
+
+    @Setter
     private List<UserTNM> userTNMs;
     private Duration userPSADoublingTime;
     private Duration userLifeExpectancy;

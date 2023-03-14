@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class DemoMockUserFactory {
-    protected UserProfileConditionMetadata getMockUser() {
+    public UserProfileConditionMetadata getMockUser() {
         return UserProfileConditionMetadata.builder()
             .userIdentification(UserIdentification.builder()
                 .userProfileId("1A35624F-E2F6-4A3E-BDA8-CBEA61AC91DB")
@@ -31,7 +31,7 @@ public class DemoMockUserFactory {
             .userConditions(Arrays.asList(UserCondition.builder().name("prostate cancer").build()))
             .userTNMs(Collections.singletonList(UserTNM.builder()
                 .primaryCancer("prostate cancer")
-                .dateOfStaging(DateTime.parse("2021-09-01"))
+                .date(DateTime.parse("2021-09-01"))
                 .t_StagePrimary("T0")
                 .t_StageSecondary("a")
                 .t_Method("c")
@@ -41,21 +41,31 @@ public class DemoMockUserFactory {
                 m_StagePrimary("M1").
                 m_StageSecondary("").
                 m_Method("c")
-                    .isLatest(true)
                 .build()))
             .userLabs(Arrays.asList(
                 UserLab.builder().specimen("blood").test("TPSA").date(DateTime.parse("2022-06-10")).level(32).build(),
                 UserLab.builder().specimen("blood").test("TPSA").date(DateTime.parse("2022-08-10")).level(5).build(),
                 UserLab.builder().specimen("blood").test("TPSA").date(DateTime.parse("2022-09-10")).level(1).build(),
                 UserLab.builder().specimen("blood").test("TPSA").date(DateTime.parse("2022-11-10")).level(0.5f).build(),
-                UserLab.builder().specimen("blood").test("TPSA").date(DateTime.parse("2022-12-10")).level(2).isLatest(true).build()))
-            .userBiopsies(Collections.singletonList(UserBiopsy.builder()
-                .gleasonScore(7)
-                .gleasonPrimary(3)
-                .gleasonSecondary(4)
-                .gleasonGrade(2)
-                .date(DateTime.parse("2022-06-15"))
-                .build()))
+                UserLab.builder().specimen("blood").test("TPSA").date(DateTime.parse("2022-12-10")).level(2).build()))
+            .userBiopsies(Arrays.asList(
+                UserBiopsy.builder()
+                    .tissue("prostate")
+                    .gleasonScore(7)
+                    .gleasonPrimary(3)
+                    .gleasonSecondary(4)
+                    .gleasonGrade(2)
+                    .date(DateTime.parse("2022-06-15"))
+                    .build(),
+                UserBiopsy.builder()
+                    .tissue("prostate")
+                    .gleasonScore(7)
+                    .gleasonPrimary(3)
+                    .gleasonSecondary(4)
+                    .gleasonGrade(2)
+                    .date(DateTime.parse("2022-06-16"))
+                    .build()
+            ))
             .userSurgeries(Arrays.asList(UserSurgery.builder()
                 .name("prostatectomy")
                 .date(DateTime.parse("2022-07-01"))

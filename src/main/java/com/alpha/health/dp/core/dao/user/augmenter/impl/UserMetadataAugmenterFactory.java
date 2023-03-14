@@ -8,7 +8,10 @@ import java.util.List;
 public class UserMetadataAugmenterFactory {
 
     final private List<UserMetadataAugmenter> registry = Arrays.asList(
-        new DateToDurationAugmenter()
+        new DateToDurationAugmenter(),
+        new LatestUserBiopsyAugmenter(),
+        new LatestTNMLabAugmenter(),
+        new LatestUserLabAugmenter()
     );
 
     public UserMetadataAugmenter getChainedAugmenter() {

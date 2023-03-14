@@ -146,6 +146,7 @@ public class LibraBackedSqlTransformerTest {
             ec = exclusionCriteria.get(i);
 
             System.out.println("Testing inclusion criteria");
+            System.out.println(user.getUserLabs());
             for (int j = 0; j < ic.size(); j ++) {
                 System.out.println(ic.get(j));
                 assertFilter(ic.get(j), user, true);

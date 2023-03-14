@@ -2,22 +2,20 @@ package com.alpha.health.dp.core.lambda.model.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import org.joda.time.DateTime;
+import lombok.experimental.SuperBuilder;
 
 @Getter
-@Builder
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+@ToString(callSuper = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserTNM {
+public class UserTNM extends AbstractLatestBackedType {
     private String primaryCancer;
-    private DateTime dateOfStaging;
     private String t_StagePrimary;
     private String t_StageSecondary;
     private String t_Method;
@@ -30,6 +28,9 @@ public class UserTNM {
 
     @Setter
     private Number durationDays;
-    @Setter
-    private Boolean isLatest;
+
+    @Override
+    public String getSortKey() {
+        return this.primaryCancer;
+    }
 }

@@ -36,7 +36,7 @@ class DateToDurationAugmenter implements UserMetadataAugmenter {
         });
 
         user.getUserTNMs().forEach(userTNM -> {
-            userTNM.setDurationDays(Days.daysBetween(userTNM.getDateOfStaging(), DateTime.now()).getDays());
+            userTNM.setDurationDays(Days.daysBetween(userTNM.getDate(), DateTime.now()).getDays());
         });
 
         user.getUserTNMs().forEach(userTNM -> {
